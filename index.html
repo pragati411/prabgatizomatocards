@@ -34,6 +34,7 @@
       priceName: "100 for one",
       rating: "4.5",
       foodName: "Fast-Food",
+      quantity: 1,
   
       
       
@@ -45,6 +46,7 @@
       priceName: "100 for one",
       rating: "4.5",
       foodName: "Fast-Food",
+      quantity: 1,
       
       
       
@@ -56,17 +58,23 @@
       priceName: "100 for one",
       rating: "4.5",
       foodName: "Fast-Food",
+      quantity: 1,
       
       
       
       
     },
     {
-      firstName: "Salad",
+      firstName: "vegetables",
       profile: "4.jpg",
       priceName: "100 for one",
       rating: "4.5",
       foodName: "Fast-Food",
+      quantity: 1,
+      
+
+      
+
       
       
       
@@ -77,6 +85,7 @@
       priceName: "100 for one",
       rating: "4.5",
       foodName: "Fast-Food",
+      quantity: 1,
       
       
     },
@@ -86,6 +95,7 @@
       priceName: "100 for one",
       rating: "4.5",
       foodName: "Fast-Food",
+      quantity: 1,
       
     }
     
@@ -95,9 +105,10 @@ const profileContainer = document.getElementById("profiles");
 profileContainer.className = "profileContainer";
 profileContainer.style.display = "flex";
 profileContainer.style.flexWrap = "wrap";
-profileContainer.style.padding= "10px";
-profileContainer.style.marginLeft = "20px";
+profileContainer.style.padding= "";
+profileContainer.style.marginLeft = "";
 profileContainer.style.gap = "20px";
+profileContainer.style.backgroundColor = "black";
 
 
 
@@ -119,7 +130,7 @@ profileContainer.style.gap = "20px";
     nameContainer.textContent = profileArr[i].firstName;
     cardContainer.appendChild(nameContainer);
     cardContainer.style.textAlign = "center";
-    cardContainer.style.color = "black";
+    cardContainer.style.color = "white";
     cardContainer.style.fontSize = "20px";
     cardContainer.style.lineHeight = "5px";
     
@@ -140,36 +151,38 @@ profileContainer.style.gap = "20px";
 
     
     const incrementBtn = document.createElement("button");
-    incrementBtn.innerText = "Increment";
+    incrementBtn.innerText = "+";
   cardContainer.appendChild(incrementBtn);
   incrementBtn.className = "increment";
-  incrementBtn.style.color ="black";
-  incrementBtn.style.backgroundColor = "light blue";
+  incrementBtn.style.color ="white";
+  incrementBtn.style.backgroundColor = "blue";
   incrementBtn.style.textAlign = "center"
   
-  const counter = document.createElement("div");
-counter.id = "count" ; 
-    counter.style.border = "1px solid black";
+  const counter = document.createElement("div"); 
+    counter.style.border = "1px solid white";
   counter.style.height = "30px"
 var ias = 0;
   incrementBtn.addEventListener("click", abc);
   function abc(){
-    counter.innerText = ias++;
+    // counter.innerText = ias++;
+    profileArr[i].quantity = profileArr[i].quantity+1;
+    counter.innerText = profileArr[i].quantity;
+  
     cardContainer.appendChild(counter);
 
   }
 
     const decrementBtn = document.createElement("button");
-    decrementBtn.innerText = "Decrement";
+    decrementBtn.innerText = "-";
     cardContainer.appendChild(decrementBtn);
     decrementBtn.className = "decrement";
-    decrementBtn.style.color = "black";
-    decrementBtn.style.backgroundColor = "light green";
+    decrementBtn.style.color = "white";
+    decrementBtn.style.backgroundColor = "green";
     decrementBtn.style.textAlign = "center";
 
     const countContainer = document.createElement("div");
     
-    countContainer.style.border = "1px solid black";
+    countContainer.style.border = "1px solid white";
   countContainer.style.height = "30px"
 
   var xyz = 0;
